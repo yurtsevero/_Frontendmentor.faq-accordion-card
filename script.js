@@ -1,13 +1,12 @@
 document.addEventListener("click", (e) => {
   let classlist = e.target.classList;
   let answers = Array.from(document.getElementsByClassName("a"));
-
-  console.log(answers);
+  console.log(classlist);
   if (classlist == "q") {
-    answers.forEach((answer) => {
-      console.log(answer);
-      answer.classList.remove("selected");
-    });
-    e.target.nextElementSibling.classList.add("selected");
+    e.target.firstElementChild.classList.toggle("rotate-img");
+    e.target.nextElementSibling.classList.toggle("selected");
+  } else if (classlist == "q-img" || classlist == "q-img rotate-img") {
+    e.target.parentElement.nextElementSibling.classList.toggle("selected");
+    e.target.classList.toggle("rotate-img");
   }
 });
