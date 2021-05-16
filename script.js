@@ -1,7 +1,7 @@
 document.addEventListener("click", (e) => {
   let classlist = e.target.classList;
   let answers = Array.from(document.getElementsByClassName("a"));
-  console.log(classlist);
+  
   if (classlist == "q") {
     e.target.firstElementChild.classList.toggle("rotate-img");
     e.target.nextElementSibling.classList.toggle("selected");
